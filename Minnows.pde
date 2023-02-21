@@ -1,4 +1,4 @@
-ArrayList<Snake> snakes = new ArrayList<Snake>();
+ArrayList<Minnow> minnows = new ArrayList<Minnow>();
 
 public void setup()
 {
@@ -10,7 +10,7 @@ public void setup()
 
   //Adds snakes
   for (int i = 0; i < 50; i++)
-    snakes.add(new Snake());
+    minnows.add(new Minnow());
 }
 
 public void draw()
@@ -18,17 +18,17 @@ public void draw()
   background(#8CE0DF);
   
   //Render all snakes
-  for (int i = 0; i < snakes.size(); i++)
+  for (int i = 0; i < minnows.size(); i++)
   {
-    Snake temp = snakes.get(i);
+    Minnow temp = minnows.get(i);
     temp.render();
 
     //Reset snake
     if (temp.isOffScreen())
     {
-      snakes.remove(i);
+      minnows.remove(i);
       i--;
-      snakes.add(new Snake());
+      minnows.add(new Minnow());
     }
   }
 }

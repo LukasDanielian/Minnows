@@ -1,10 +1,10 @@
-public class Snake
+public class Minnow
 {
   private float x, y, size, speed;
   private PVector pointing;
   private ArrayList<PVector> tailSpots;
 
-  public Snake()
+  public Minnow()
   {
     int side = (int)random(0, 5);
     speed = 2;
@@ -43,7 +43,7 @@ public class Snake
     tailSpots.add(new PVector(x, y, size));
   }
 
-  //Renders snake movements
+  //Renders Fish movements
   public void render()
   {
     //Render tail
@@ -63,7 +63,7 @@ public class Snake
       }
     }
 
-    //Render snake and moves around randomly
+    //Render Fish and moves around randomly
     fill(#C1500E);
     pushMatrix();
     translate(x, y);
@@ -99,7 +99,7 @@ public class Snake
     }
   }
 
-  //Returns true if snake is fully off screen
+  //Returns true if Fish is fully off screen
   public boolean isOffScreen()
   {
     return tailSpots.size() == 0;
