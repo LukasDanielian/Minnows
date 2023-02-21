@@ -3,6 +3,7 @@ public class Minnow
   private float x, y, size, speed;
   private PVector pointing;
   private ArrayList<PVector> tailSpots;
+  private int col;
 
   public Minnow()
   {
@@ -10,6 +11,11 @@ public class Minnow
     speed = 2;
     size = random(25,50);
     tailSpots = new ArrayList<PVector>();
+    col = #C1500E;
+    
+    //Yellow fish
+    if((int)random(0,100) == 0)
+      col = #611598;
 
     //Left
     if (side == 0)
@@ -51,7 +57,7 @@ public class Minnow
     {
       PVector temp = tailSpots.get(i);
 
-      fill(#C1500E);
+      fill(col);
       circle(temp.x, temp.y, temp.z);
       temp.z-=.5;
 
@@ -64,11 +70,13 @@ public class Minnow
     }
 
     //Render Fish and moves around randomly
-    fill(#C1500E);
     pushMatrix();
     translate(x, y);
     rotate(pointing.heading());
     circle(0, 0, size);
+    
+    //Fins
+    triangle(-size/5,0,-size/2,-size,-size/2,size);
 
     //Eyes
     strokeWeight(size/5);
