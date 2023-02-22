@@ -106,6 +106,12 @@ public class Minnow
     
     colorMode(NORMAL);
   }
+  
+  //Updates where the fish is swimming to
+  public void changeDir(float x, float y)
+  {
+    pointing = new PVector(x - this.x, y - this.y).normalize();
+  }
 
   //Returns true if Fish is fully off screen
   public boolean isOffScreen()
