@@ -3,7 +3,7 @@ public class Minnow
   private float x, y, size, speed;
   private PVector pointing;
   private ArrayList<PVector> tailSpots;
-  private int col;
+  private float col;
 
   public Minnow()
   {
@@ -11,11 +11,7 @@ public class Minnow
     speed = 2;
     size = random(25,50);
     tailSpots = new ArrayList<PVector>();
-    col = #C1500E;
-    
-    //Yellow fish
-    if((int)random(0,100) == 0)
-      col = #611598;
+    col = random(0,255);
 
     //Left
     if (side == 0)
@@ -52,12 +48,14 @@ public class Minnow
   //Renders Fish movements
   public void render()
   {
+    colorMode(HSB);
+    
     //Render tail
     for (int i = 0; i < tailSpots.size(); i++)
     {
       PVector temp = tailSpots.get(i);
 
-      fill(col);
+      fill(col,255,255);
       circle(temp.x, temp.y, temp.z);
       temp.z-=.5;
 
@@ -105,6 +103,8 @@ public class Minnow
       x = width * 2;
       y = height * 2;
     }
+    
+    colorMode(NORMAL);
   }
 
   //Returns true if Fish is fully off screen

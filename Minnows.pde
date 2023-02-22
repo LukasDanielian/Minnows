@@ -16,7 +16,7 @@ public void setup()
 
 public void draw()
 {
-  background(#8CE0DF);
+  background(#1E2A4D);
   
   //Render all fish
   for (int i = 0; i < minnows.size(); i++)
