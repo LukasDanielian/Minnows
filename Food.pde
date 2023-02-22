@@ -19,7 +19,7 @@ public class Food
     pushMatrix();
     fill(#896666);
     translate(x, y);
-    rotate(frameCount * .1);
+    rotate(frameCount * .05);
     square(0, 0, 15);
     popMatrix();
 
@@ -27,7 +27,7 @@ public class Food
     y += yMover;
 
     //Stop throw
-    if (!inWater && dist(x, y, endX, endY) < 100)
+    if (!inWater && dist(x, y, endX, endY) < 25)
     {
       x = endX;
       y = endY;
