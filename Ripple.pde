@@ -20,7 +20,7 @@ public class Ripple
     noStroke();
     
     size += 2;
-    waveLength-=.25;
+    waveLength -= .25;
   }
   
   //Checks if wave is over
